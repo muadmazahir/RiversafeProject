@@ -2,7 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 
 url = input("Enter URl: ")
-print(url)
 
 getpage= requests.get(url)
 
