@@ -1,13 +1,15 @@
-import pip._vendor.requests as requests
+import requests
+from bs4 import BeautifulSoup
 
 url = input("Enter URl: ")
 print(url)
 
-
 getpage= requests.get(url)
 
-content = str(getpage.text)
+getpage_soup= BeautifulSoup(getpage.text, 'html.parser')
+
+content = str(getpage_soup.prettify())
 
 
-f = open('workfile', 'w', encoding="utf-8")
+f = open('workfile2', 'w', encoding="utf-8")
 f.write(content)
