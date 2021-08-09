@@ -5,7 +5,8 @@ import pytest
 def test_scrap_web_method():
     web_scrapper = WebScrapper("http://www.learningaboutelectronics.com")
     web_scrapper.scrap_web()
-    assert "1234" == web_scrapper.get_content()
+    with pytest.raises(AssertionError):
+        assert "1234" == web_scrapper.get_content()
 
 #testing the write_file method. Testing to see if opening a file that doesn't exist raises an error.
 def test_missing_file_name_raises_error():

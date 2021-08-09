@@ -28,7 +28,6 @@ class WebScrapper():
     def delete_file(self, file_name):
         os.remove(file_name)
 
-
     def get_content(self):
         return self.content
 
