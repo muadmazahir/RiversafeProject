@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>Welcome to Web Scrapper</h1>
+    <p>Do you want to scrape a web site?</p>
+
+    <form method="POST">
+        <label for="url">Enter URL</label><br>
+        <input type="text" name="url">
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if url %}
+        <p>Web scraping from {{url}} done!</p>
+
+        {{ content }}
+    {% elif error_message %}
+        <p>{{ error_message }}</p>
+    {% endif %}
+</body>
+</html>
